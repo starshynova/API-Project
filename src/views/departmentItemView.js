@@ -18,7 +18,5 @@ export function createDepartmentItemView (department) {
     departmentItem.classList.add('department_item');
     departmentItem.textContent = department;
     return departmentItem;
-    
-
 }
 
