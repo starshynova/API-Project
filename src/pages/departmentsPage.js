@@ -1,8 +1,17 @@
-import { MUSEUMS } from "../constants";
+import { MUSEUMS } from "../constants.js";
+import { museumApi } from "./mainPage.js";
 
-async function getDepartments() {
-    
-    const departmentsList = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/departments');
+
+// MUSEUMS.forEach(museum => {
+
+// })
+// const apiUrl = getMuseumApi();
+export async function getDepartments(museumApi) {
+
+    const departmentsList = await fetch(museumApi);
     const data = await departmentsList.json();
-    return data.departments;
+    console.log(data);
+    // return data.departments;
 }
+
+getDepartments(museumApi);

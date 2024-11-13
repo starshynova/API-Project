@@ -1,6 +1,6 @@
-import { MUSEUMS } from "../constants";
+import { MUSEUMS } from "../constants.js";
 
-export function choiceMuseums () {
+export const choiceMuseums = () => {
     const museumsContainer = document.createElement('div');
     MUSEUMS.forEach(museum => {
         const museumBtn = document.createElement('button');
