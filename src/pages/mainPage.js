@@ -3,8 +3,7 @@ import { createMainView } from "../views/mainView.js";
 import { getDepartments } from "./departmentsPage.js";
 import { errorPage } from "./errorPage.js";
 
-export const museumApi = '';
-// export const getMuseumApi = () => museumApi;
+export let museumApi;
 export const mainPage = () => {
     const mainInterface = document.querySelector('#mainInterface');
     mainInterface.innerHTML = '';
@@ -39,12 +38,8 @@ async function someFunction(apiUrl) {
 
 
     if (data && data.departments) {
-        museumApi = apiUrl; 
-        window.location.href = "./departmentsPage.js";
-        // getDepartments(museumApi);
-    // if (data.departments) {
-    //     // Display the departments to confirm the data flow is correct
-    //     console.log("Departments:", data.departments);
+        // museumApi = apiUrl; 
+        getDepartments(apiUrl);
     } else {
         throw new Error("Invalid data structure from API");
     }

@@ -1,4 +1,4 @@
-export const URL_DEPARTMENTS = 'https://collectionapi.metmuseum.org/public/collection/v1/departments';
+// export const URL_DEPARTMENTS = 'https://collectionapi.metmuseum.org/public/collection/v1/departments';
 
 export const MUSEUMS = 
 [
