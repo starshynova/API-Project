@@ -12,15 +12,15 @@ export const mainPage = () => {
     mainInterface.appendChild(mainElement);
 
     document.querySelectorAll('button').forEach((button, index) => {
-        button.addEventListener('click', () => someFunction(MUSEUMS[index].api));
+        button.addEventListener('click', () => getMuseumApi(MUSEUMS[index].api));
     });
 }
 
-async function someFunction(apiUrl) {
+async function getMuseumApi(apiUrl) {
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-            throw new Error("API is wrong"); 
+            throw new Error("API error"); 
         }
         const data = await response.json();
     //     if (data && typeof data !== 'string') {
@@ -44,8 +44,8 @@ async function someFunction(apiUrl) {
         throw new Error("Invalid data structure from API");
     }
 } catch (error) {
-    console.error("API Error:", error);
-    errorPage();
+    console.error("Error:", error.message);
+    errorPage(error.message); 
 }
 }
 

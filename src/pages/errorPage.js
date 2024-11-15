@@ -1,8 +1,9 @@
 import { createErrorView } from "../views/errorView.js";
-export function errorPage () {
+export function errorPage (errorMessage) {
     const mainInterface = document.querySelector('#mainInterface');
     mainInterface.innerHTML = '';
 
-    const mainElement = createErrorView();
-    mainInterface.appendChild(mainElement);
+    const errorElement = createErrorView(errorMessage);
+    // errorElement.classList.add = 'error-element';
+    mainInterface.appendChild(errorElement);
 }

@@ -15,7 +15,7 @@ export function createDepartmentItemView (department) {
     // const listContainer = document.createElement('div');
     // listContainer.classList.add('list_container');
     const departmentItem = document.createElement('button');
-    departmentItem.classList.add('department_item');
+    departmentItem.classList.add('department-item');
     departmentItem.textContent = department;
     return departmentItem;
 }
