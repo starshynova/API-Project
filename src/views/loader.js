@@ -1,5 +1,4 @@
 
-
 export function showLoader () {
     const mask = document.createElement('div');
     mask.classList.add('mask');

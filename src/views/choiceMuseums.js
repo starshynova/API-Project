@@ -19,9 +19,16 @@ export function choiceMuseums() {
         museumLogoBackground.appendChild(museumLogo);
         museumBtn.appendChild(museumNameBackground);
         museumBtn.appendChild(museumLogoBackground);
-        
 
-        // museumBtn.textContent = museum.name;
+        museumBtn.addEventListener('mouseover', () => {
+            museumLogo.src = museum.logo_red; 
+        });
+    
+        
+        museumBtn.addEventListener('mouseout', () => {
+            museumLogo.src = museum.logo; 
+        });
+
         museumsContainer.appendChild(museumBtn);
     });
     return museumsContainer;

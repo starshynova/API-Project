@@ -12,34 +12,24 @@ export const mainPage = () => {
     mainInterface.appendChild(mainElement);
 
     document.querySelectorAll('button').forEach((button, index) => {
-        button.addEventListener('click', () => getMuseumApi(MUSEUMS[index].api));
+        button.addEventListener('click', () => {
+            museumApi = MUSEUMS[index].api;
+            getMuseumApi(museumApi)});
     });
 }
 
-async function getMuseumApi(apiUrl) {
+async function getMuseumApi(museumApi) {
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(museumApi);
         if (!response.ok) {
             throw new Error("API error"); 
         }
         const data = await response.json();
-    //     if (data && typeof data !== 'string') {
-    //         museumApi = data;
-    //         getDepartments(museumApi);
-    //     }
-    //     else {
-    //         errorPage();
-    //     }
-    // }
-    // catch (error) {
-    //     errorPage();
-    // }
 
 
 
     if (data && data.departments) {
-        // museumApi = apiUrl; 
-        getDepartments(apiUrl);
+        getDepartments(museumApi);
     } else {
         throw new Error("Invalid data structure from API");
     }
@@ -48,6 +38,3 @@ async function getMuseumApi(apiUrl) {
     errorPage(error.message); 
 }
 }
-
-document.addEventListener('DOMContentLoaded', mainPage);
-// mainPage();

@@ -1,13 +1,9 @@
 export function createErrorView(errorMessage) {
-   // const emptyScreen = document.querySelector('interface');
-   // emptyScreen.innerHTML = '';
    const errorContainer = document.createElement('div');
    errorContainer.classList.add('error-container');
    const errorTxt = document.createElement('h3');
    errorTxt.textContent = getErrorText(errorMessage);
    errorContainer.appendChild(errorTxt);
-   // emptyScreen.appendChild(errorContainer);
-   // return emptyScreen;
    return errorContainer;
 };
 
