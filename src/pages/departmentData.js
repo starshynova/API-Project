@@ -3,6 +3,8 @@ import { departmentId, getDepartments } from "./departmentsPage.js";
 import { back } from "../views/back.js";
 import { museumApi } from "./mainPage.js";
 import { modalWindow } from "../views/modalView.js";
+import { MUSEUMS } from "../constants.js";
+
 
 export let objectId;
 export let objectData;
@@ -21,7 +23,10 @@ export async function getDepartmentData() {
     try {
         showLoader();
 
-        const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=${departmentId}&q=cat`);
+        const departmentApiUrl = MUSEUMS.find((museum) => museum.api === museumApi)
+            .getDepartmentIdApi(departmentId);
+
+        const response = await fetch(departmentApiUrl);
         const data = await response.json();
 
 
@@ -30,9 +35,13 @@ let imagesFetched = 0;
     for (let i = 0; i < data.objectIDs.length && imagesFetched < 10 && i < 30; i++) {
         objectId = data.objectIDs[i];
 
-            const objectResponse = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`);
-            objectData = await objectResponse.json();
-            if (objectData.primaryImage) {
+        const objectApiUrl = MUSEUMS.find((museum) => museum.api === museumApi)
+        .getObjectIdApi(objectId);
+
+        const objectResponse = await fetch(objectApiUrl);
+        const objectData = await objectResponse.json();
+            
+        if (objectData.primaryImage) {
                 const objectImage = document.createElement('img');
                 objectImage.classList.add('object-img');
                 objectImage.src = objectData.primaryImage;
@@ -51,10 +60,14 @@ let imagesFetched = 0;
         }
 
         if (imagesFetched === 0) {
-            departmentData.textContent = "No images found in this department.";
+            const departmentDataError = document.createElement('h3');
+            departmentDataError.textContent = "No images found in this department.";
+            departmentDataError.classList.add('blue');
+            departmentData.appendChild(departmentDataError); 
         }
     } catch (error) {
         console.error("Error fetching department data:", error);
+        errorPage(error.message);
     } finally {
         hideLoader();
     }

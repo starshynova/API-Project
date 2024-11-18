@@ -4,6 +4,10 @@ export const MUSEUMS =
     {
     name: "Metropolitan museum",
     api: "https://collectionapi.metmuseum.org/public/collection/v1/departments",
+    getDepartmentIdApi: (departmentId) => 
+        `https://collectionapi.metmuseum.org/public/collection/v1/search?departmentId=${departmentId}&q=cat`,
+    getObjectIdApi: (objectId) => 
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`,
     logo: "https://i.postimg.cc/Jh2mQ8M9/the-Met-bw.jpg",
     logo_red: "https://i.postimg.cc/3rPNTXMP/the-Met-red.jpg"
     },

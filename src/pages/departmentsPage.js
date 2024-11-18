@@ -1,5 +1,4 @@
-import { MUSEUMS } from "../constants.js";
-import { mainPage, museumApi } from "./mainPage.js";
+import { mainPage } from "./mainPage.js";
 import { getDepartmentData } from "./departmentData.js";
 import { createDepartmentItemView } from "../views/departmentItemView.js";
 import { hideLoader, showLoader } from "../views/loader.js";

@@ -34,7 +34,6 @@ async function getMuseumApi(museumApi) {
         throw new Error("Invalid data structure from API");
     }
 } catch (error) {
-    console.error("Error:", error.message);
     errorPage(error.message); 
 }
 }

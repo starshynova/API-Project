@@ -1,8 +1,17 @@
+import { mainPage } from "../pages/mainPage.js";
+import { back } from "./back.js";
+
 export function createErrorView(errorMessage) {
+   const backButton = back();
+    backButton.addEventListener('click', () => {
+        mainPage(); 
+    });
    const errorContainer = document.createElement('div');
    errorContainer.classList.add('error-container');
    const errorTxt = document.createElement('h3');
+   errorTxt.classList.add('blue');
    errorTxt.textContent = getErrorText(errorMessage);
+   errorContainer.appendChild(backButton);
    errorContainer.appendChild(errorTxt);
    return errorContainer;
 };
