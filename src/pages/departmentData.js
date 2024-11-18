@@ -8,7 +8,7 @@ import { MUSEUMS } from "../constants.js";
 
 export let objectId;
 export let objectData;
-export async function getDepartmentData() {
+export async function getDepartmentData(departmentName) {
 
     const mainInterface = document.querySelector('#mainInterface');
     mainInterface.innerHTML = '';
@@ -17,6 +17,9 @@ export async function getDepartmentData() {
         getDepartments(museumApi); 
     });
     mainInterface.appendChild(backButton);
+    const departmentTitle = document.createElement('h2');
+    departmentTitle.textContent = departmentName;
+    mainInterface.appendChild(departmentTitle);
     const departmentData = document.createElement('div');
     departmentData.classList.add('department-data');
 
