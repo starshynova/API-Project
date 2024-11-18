@@ -216,6 +216,7 @@ h3 {
     height: 100%;
     cursor: pointer;
     z-index: 10;
+    justify-content: center;
 }
 
 .modal-active {
@@ -223,7 +224,6 @@ h3 {
     width: 60%;
     justify-content: center;
     top: 30%;
-    left: 20%;
     border-radius: 10px;
     background-color: rgb(236, 246, 255);;
     cursor: default;
