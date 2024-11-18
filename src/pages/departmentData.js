@@ -40,7 +40,6 @@ let imagesFetched = 0;
                 objectImage.addEventListener('click', (() => {
                     const currentObjectData = objectData; 
                     return () => {
-                        console.log('Image clicked:', currentObjectData);
                         modalWindow(currentObjectData); 
                     };
                 })());

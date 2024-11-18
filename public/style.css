@@ -161,17 +161,6 @@ h3 {
     padding: 20% auto 0 auto;
 }
 
-.loading {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(236, 246, 255);
-    font-size: 20px;
-    text-align: center;
-}
-
 .mask {
     width: 100%;
     height: 100%;
@@ -244,7 +233,6 @@ h3 {
 
 .modal-window {
     z-index: 12;
-    justify-content: start;
 }
 
 .close-btn {
@@ -265,3 +253,116 @@ h3 {
     color: rgb(0, 26, 49);
     border-color: rgb(176, 176, 176);
 }
+
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    #mainInterface {
+        width: 90% 
+    }
+    
+    .museum-btn {
+        width: 80%;
+        aspect-ratio: 1 / 0.5;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #main-txt {
+        padding-top: 40px;
+    }
+    
+    .museum-logo-background {
+        width: 45%;
+    }
+    
+    .museum-name-background {
+        width: 50%;
+        aspect-ratio: 1 / 1;
+    }
+    
+    .museum-container {
+        flex-direction: column;
+    }
+    
+    .department-item {
+        width: 80%;
+        height: 80px;
+        margin: 16px auto;
+    }
+    
+    .department-data {
+        padding: 40px 0px;
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .object-img {
+        width: 60%;
+    }
+    
+    .modal-active {
+        width: 80%;
+    }
+    
+    .close-btn {
+        width: 80px;
+        height: 40px;
+        margin: 40px auto 0;
+    }
+}
+
+@media screen and (min-width: 768.1px) and (max-width: 1080px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 24 px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    #mainInterface {
+        width: 90% 
+    }
+
+    #main-txt {
+        padding-top: 40px;
+    }
+    
+    .department-item {
+        width: 45%;
+        height: 80px;
+        margin: 16px auto;
+    }
+    
+    .department-data {
+        padding: 60px 0px;
+        font-size: 16px;
+        justify-content: space-between;
+    }
+    
+    .close-btn {
+        width: 80px;
+        height: 40px;
+        margin: 40px auto 0;
+    }
+}     
+
