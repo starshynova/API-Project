@@ -1,4 +1,6 @@
-# Museum App
+# Museums
+
+You can try this app by visiting [Museums](https://starshynova.github.io/API-Project/)
 
 ## Overview
 
@@ -17,10 +19,6 @@ In this application, the user can explore the works of art that are displayed in
 2. CSS
 3. JavaScript
 4. API integration
-
-## Getting started
-
-You can try this app by visiting [Museum App](https://starshynova.github.io/API-Project/)
 
 ## Structure of the project
 
